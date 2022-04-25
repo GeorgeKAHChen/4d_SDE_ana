@@ -1,0 +1,45 @@
+{
+    // ===========================================================
+    // Time parameter
+    // ===========================================================
+        "delta_t": 1e-4, 
+        "T_max":  100000, 
+        "T_mark": 90000, 
+        // `delta_t` is the step size of the code.
+        // `T_max` is the final time t.
+        // After `T_mark`, the code will try to compute the Lyapunov 
+        // Spectrum if `print_every_LyaSpec` or `print_final_LyaSpec`
+        // != 0.
+
+
+        "print_delta_t": 1,
+        // If     
+        //  ```      
+        //  print_every_values
+        //  ```
+        // != 0, then after every `print_delta_t`, the system will print
+        // the result. If `print_delta_t` <= `delta_t`, then the system
+        // will print every results after `delta_t`.
+        
+    //===========================================================
+
+    // ===========================================================
+    // Model parameter
+    // ===========================================================
+        // THIS CODE CAN ONLY PLOT 4-D MODEL
+        // Fully Extend Rossler System(FSERS)
+        
+        "dyn": "model.FSERS",
+        // Model file name
+
+        "dim": 4,
+        "rand_dim": 1,
+        "para_size": 5,
+        "rand_para_size": 4,
+        // Model basic parameter setting
+
+        "para": [         1,         1,         1,         1, 0.2, 3, 1, 0.025,   1, 0.0000, 0.0000, 0.0000, 0.0000]
+        //name           x0         y0         z0         w0    a  b  c     mu  eta      sx      sy      sz      sw
+        // Model Parameter
+
+}
