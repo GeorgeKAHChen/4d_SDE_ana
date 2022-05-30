@@ -3,8 +3,10 @@
     // Time parameter
     // ===========================================================
         "delta_t": 1e-4, 
-        "T_max":  100000, 
-        "T_mark": 90000, 
+        // "T_max":  100000, 
+        // "T_mark": 90000, 
+        "T_max":  600, 
+        "T_mark": 100, 
         // `delta_t` is the step size of the code.
         // `T_max` is the final time t.
         // After `T_mark`, the code will try to compute the Lyapunov 
@@ -12,7 +14,7 @@
         // != 0.
 
 
-        "print_delta_t": 1,
+        "print_delta_t": 1e-1,
         // If     
         //  ```      
         //  print_every_values
@@ -22,6 +24,8 @@
         // will print every results after `delta_t`.
         
     //===========================================================
+
+
 
     // ===========================================================
     // Model parameter
@@ -33,13 +37,35 @@
         // Model file name
 
         "dim": 4,
-        "rand_dim": 1,
+        "rand_dim": 0,
+        // "rand_dim": 1,
         "para_size": 5,
         "rand_para_size": 4,
         // Model basic parameter setting
 
-        "para": [         1,         1,         1,         1, 0.2, 3, 1, 0.025,   1, 0.0000, 0.0000, 0.0000, 0.0000]
+        // "para": [         1,         2,         3,         4, 0.2, 3, 1, 0.025,   1, 0.0001, 0.0002, 0.0003, 0.0004],
+        // "para": [         1,         2,         3,         4, 0.2, 3, 1, 0.025,   1, 0.0001, 0.0002, 0.0003, 0.0004],
+        
+        // Det
         //name           x0         y0         z0         w0    a  b  c     mu  eta      sx      sy      sz      sw
-        // Model Parameter
+        //"para": [-13.333874, -6.043156, 14.617957, 36.531936, 0.2, 3, 0, 0.023,   1, 0.0000, 0.0000, 0.0000, 0.0001],
+        
+        // Sto
+        //name           x0         y0         z0         w0    a  b  c     mu  eta      sx      sy      sz      sw
+        "para": [-13.333874, -6.043156, 14.617957, 36.531936, 0.2, 3, 0, 0.023,   1,      0,      0,      0,      5],
 
+        // RS
+        //name           x0         y0         z0         w0    a    b     c     mu  eta      sx      sy      sz      sw
+        //"para": [        -1,         0,         1,         0, 0.2, 0.2,  5.7, 0.000,   0,      0,      0,      0,      0],
+        // Model Parameter
+        // si = sigma_i * delta_t
+    // ===========================================================
+
+
+
+    // ===========================================================
+    // Plot parameter
+    // ===========================================================
+
+        "plot_name": "xy_zw"
 }
